@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>1.0.0-beta.1</Version>
-    <PackageId>Azure.ResourceManager.DeviceOnboarding</PackageId>
+    <PackageId>Azure.ResourceManager.Dev.DeviceOnboarding</PackageId>
     <Description>Azure Resource Manager client SDK for Azure resource provider Microsoft.DeviceOnboarding.</Description>
     <PackageTags>azure;management;arm;resource manager;deviceonboarding</PackageTags>
   </PropertyGroup>

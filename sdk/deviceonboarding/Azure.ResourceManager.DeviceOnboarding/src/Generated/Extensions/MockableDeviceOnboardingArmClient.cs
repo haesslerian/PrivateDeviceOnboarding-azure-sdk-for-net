@@ -39,7 +39,7 @@ namespace Azure.ResourceManager.DeviceOnboarding.Mocking
         /// <returns> Returns a <see cref="DeviceStateResource"/> object. </returns>
         public virtual DeviceStateResource GetDeviceState(ResourceIdentifier scope)
         {
-            return new DeviceStateResource(Client, scope.AppendProviderResource("Microsoft.DeviceOnboarding", "deviceStates", "default"));
+            return new DeviceStateResource(Client, scope.AppendProviderResource($"{System.Environment.GetEnvironmentVariable("OnboardingServiceProvider")}", "deviceStates", "default"));
         }
 
         /// <summary>

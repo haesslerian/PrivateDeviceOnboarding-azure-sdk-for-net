@@ -8,3 +8,4 @@ foreach ($file in $configFiles)
     Set-Content $file.PSPath
     echo $file.PSPath
 }
+(Get-Content .\Generated\Extensions\MockableDeviceOnboardingArmClient.cs).Replace('"Microsoft.DeviceOnboarding', '$"{System.Environment.GetEnvironmentVariable("OnboardingServiceProvider")}') | Set-Content .\Generated\Extensions\MockableDeviceOnboardingArmClient.cs
