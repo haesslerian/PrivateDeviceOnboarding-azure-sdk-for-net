@@ -5,4 +5,16 @@
     <Description>Azure Resource Manager client SDK for Azure resource provider Microsoft.DeviceOnboarding.</Description>
     <PackageTags>azure;management;arm;resource manager;deviceonboarding</PackageTags>
   </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" >
+    <PropertyGroup>
+      <PowerShellExe Condition=" '$(PowerShellExe)'=='' ">
+        %WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe
+      </PowerShellExe>
+      <ScriptLocation Condition=" '$(ScriptLocation)'=='' ">
+        $(ProjectDir)MakeProviderNeutral.ps1
+      </ScriptLocation>
+    </PropertyGroup>
+    <Exec Command="$(PowerShellExe) -NonInteractive -executionpolicy Unrestricted -command &quot;&amp; { .\MakeProviderNeutral.ps1 } &quot;" />
+  </Target>
 </Project>
